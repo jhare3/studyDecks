@@ -10,7 +10,14 @@
 <body>
   <div class="app">
     <h1>Study Decks</h1>
-    <h2>ServiceNow Instance Configuration Flashcards</h2>
+    <div class="deck-selector">
+      <label for="deck-select">Choose a Deck:</label>
+      <select id="deck-select">
+        <option value="instance-config">ServiceNow Instance Configuration</option>
+        <option value="data-management">ServiceNow Data Management</option>
+      </select>
+    </div>
+    <h2 id="deck-title">ServiceNow Instance Configuration Flashcards</h2>
     <div class="flashcard">
       <h3 id="question">Question will appear here</h3>
       <p id="answer" class="hidden">Answer will appear here</p>
@@ -21,7 +28,7 @@
       <button id="next">Next</button>
     </div>
     <div class="progress">
-      Card <span id="current-card">1</span> of <span id="total-cards">5</span>
+      Card <span id="current-card">1</span> of <span id="total-cards">25</span>
     </div>
   </div>
   <script src="script.js"></script>

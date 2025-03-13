@@ -30,6 +30,21 @@ body {
     color: #333;
   }
   
+  .deck-selector {
+    margin-bottom: 20px;
+  }
+  
+  .deck-selector label {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .deck-selector select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
   .flashcard {
     background: #fff;
     border: 1px solid #ddd;
