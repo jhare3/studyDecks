@@ -1,6 +1,48 @@
 // Preloaded flashcard data
 const decks = {
-    "instance-config": [
+  "cram": [
+    {
+      question: "How do you move configurations between instances?",
+      answer: "Use Update Sets: Retrieve → Preview → Commit. Never edit directly in Prod!"
+    },
+    {
+      question: "Where do you configure system-wide settings?",
+      answer: "System Definition > System Properties (not 'System Properties > Properties')."
+    },
+    {
+      question: "What enforces record-level security?",
+      answer: "ACLs (Access Control Lists). They validate server-side, unlike client-side checks."
+    },
+    {
+      question: "Where does a Business Rule run?",
+      answer: "On the SERVER. Use it for data integrity (client-side can be bypassed!)."
+    },
+    {
+      question: "How do you link a record to another table?",
+      answer: "Use a Reference field (e.g., incident.caller_id points to sys_user)."
+    },
+    {
+      question: "What variable type would you use for a dropdown of departments?",
+      answer: "Reference variable (points to the 'Department' table)."
+    },
+    {
+      question: "What’s the difference between UI Policy and Data Policy?",
+      answer: "UI Policy (client-side, hides fields). Data Policy (server-side, enforces rules like mandatory fields)."
+    },
+    {
+      question: "How do you pause a workflow for approval?",
+      answer: "Add an 'Approval Activity' with a wait condition."
+    },
+    {
+      question: "What does OOTB stand for?",
+      answer: "Out of the Box (pre-built features like Incident Management)."
+    },
+    {
+      question: "How long is a sys_id?",
+      answer: "32-character hex string (e.g., e0d08b6c1b4a9cd0023f5d12eabc1234)."
+    }
+  ],
+  "instance-config": [
       {
         question: "What is a ServiceNow instance?",
         answer: "A ServiceNow instance is a single installation of the ServiceNow platform, hosted on the cloud or on-premises, that allows users to manage IT services, workflows, and business processes."
