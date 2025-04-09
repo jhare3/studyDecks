@@ -8,6 +8,46 @@ body {
     align-items: center;
     height: 100vh;
   }
+
+  /* Add to styles.css */
+.custom-deck-controls {
+  margin-bottom: 20px;
+}
+
+/* Loading spinner (add to styles.css) */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #9dd84f;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Input group styling */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#generate-btn {
+  background: #4a6fa5;
+  color: white;
+}
   
   .app {
     text-align: center;
