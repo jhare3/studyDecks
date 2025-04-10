@@ -190,35 +190,41 @@ Rules:
 // ======================
 
 generateBtn.addEventListener('click', () => {
-  const topic = topicInput.value.trim();
-  const count = Math.min(parseInt(cardCountInput.value), 20) || 5;
+    const topic = topicInput.value.trim();
+    const count = Math.min(parseInt(cardCountInput.value), 20) || 5;
+    
+    if (!topic) {
+      alert("Please enter a topic");
+      return;
+    }
   
-  if (topic) {
-    generateNewDeck(topic, count);
-  } else {
-    alert("Please enter a topic");
-  }
-});
+    // Show loading animation
+    const loadingElement = document.getElementById('loading-animation');
+    loadingElement.classList.remove('hidden');
+    
+    // Force a browser repaint to ensure loader is visible
+    void loadingElement.offsetWidth;
+    
+    // Use setTimeout to break up the execution and ensure loader shows
+    setTimeout(async () => {
+      try {
+        // Check if the function returns a Promise
+        const result = generateNewDeck(topic, count);
+        
+        if (result instanceof Promise) {
+          await result; // If it's async, wait for it
+        }
+        // If not async, it will complete synchronously
+      } catch (error) {
+        console.error("Error generating deck:", error);
+        alert("Failed to generate flashcards. Please try again.");
+      } finally {
+        loadingElement.classList.add('hidden');
+      }
+    }, 50); // Minimal delay to ensure UI updates
+  });
 
-deckSelect.addEventListener('change', () => {
-  switchToDeck(deckSelect.value);
-});
 
-showAnswerButton.addEventListener('click', () => {
-  answerElement.classList.toggle('hidden');
-});
-
-previousButton.addEventListener('click', () => {
-  const deck = state.decks[state.currentDeckId];
-  state.currentCardIndex = (state.currentCardIndex - 1 + deck.cards.length) % deck.cards.length;
-  renderCard();
-});
-
-nextButton.addEventListener('click', () => {
-  const deck = state.decks[state.currentDeckId];
-  state.currentCardIndex = (state.currentCardIndex + 1) % deck.cards.length;
-  renderCard();
-});
 
 // Initialize
 function init() {
