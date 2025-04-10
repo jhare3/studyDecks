@@ -242,3 +242,12 @@ select {
 .hidden {
   display: none !important;
 }
+
+#loading-animation.hidden {
+  display: none; /* Instead of opacity: 0 */
+  /* OR if you want fade animation: */
+  /*
+  opacity: 0;
+  pointer-events: none;
+  */
+}

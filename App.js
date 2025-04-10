@@ -183,6 +183,25 @@ Rules:
       showLoading(false);
     }
   }
+
+  showAnswerButton.addEventListener('click', () => {
+    console.log("Show Answer clicked!"); // Test if this logs
+    answerElement.classList.toggle('hidden');
+  });
+  
+  previousButton.addEventListener('click', () => {
+    console.log("Previous clicked!");
+    const deck = state.decks[state.currentDeckId];
+    state.currentCardIndex = (state.currentCardIndex - 1 + deck.cards.length) % deck.cards.length;
+    renderCard();
+  });
+  
+  nextButton.addEventListener('click', () => {
+    console.log("Next clicked!");
+    const deck = state.decks[state.currentDeckId];
+    state.currentCardIndex = (state.currentCardIndex + 1) % deck.cards.length;
+    renderCard();
+  });
   
 
 // ======================
