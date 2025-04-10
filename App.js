@@ -184,6 +184,7 @@ Rules:
     }
   }
 
+  // Button functions
   showAnswerButton.addEventListener('click', () => {
     console.log("Show Answer clicked!"); // Test if this logs
     answerElement.classList.toggle('hidden');
@@ -201,6 +202,11 @@ Rules:
     const deck = state.decks[state.currentDeckId];
     state.currentCardIndex = (state.currentCardIndex + 1) % deck.cards.length;
     renderCard();
+  });
+
+  deckSelect.addEventListener('change', () => {
+    console.log("Deck selected:", deckSelect.value); // Check if this logs
+    switchToDeck(deckSelect.value);
   });
   
 
