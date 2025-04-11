@@ -173,6 +173,10 @@ const decks = {
         answer: "The Configuration Management Database (CMDB) is a centralized repository that stores information about all the configuration items (CIs) in an organization's IT environment."
       },
       {
+        question: "What is CMDB in ServiceNow?",
+        answer: "The Configuration Management Database (CMDB) is a centralized repository that stores information about all the configuration items (CIs) in an organization's IT environment."
+      },
+      {
         question: "What is CSDM?",
         answer: "The Common Service Data Model (CSDM) is a framework that provides a standardized way to model and organize data in the CMDB to support IT Service Management (ITSM) and IT Operations Management (ITOM)."
       },
